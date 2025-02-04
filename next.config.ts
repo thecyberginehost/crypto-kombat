@@ -11,9 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Avoids issues with image optimization on Vercel
   },
-  experimental: {
-    appDir: true, // Ensure support for the App Router if used
-  },
 };
 
 export default nextConfig;
