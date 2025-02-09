@@ -7,7 +7,7 @@ export default function Leaderboard() {
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
-    const tournamentDate = new Date("2025-02-21T00:00:00Z").getTime();
+    const tournamentDate = new Date("2025-03-01T00:00:00Z").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();

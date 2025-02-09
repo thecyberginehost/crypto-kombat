@@ -7,7 +7,7 @@ export default function Home() {
   const [countdown, setCountdown] = useState("");
 
   useEffect(() => {
-    const tournamentDate = new Date("2025-02-21T00:00:00Z").getTime();
+    const tournamentDate = new Date("2025-03-01T00:00:00Z").getTime();
     const updateCountdown = () => {
       const now = new Date().getTime();
       const timeLeft = tournamentDate - now;
@@ -31,8 +31,13 @@ export default function Home() {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen text-white text-center p-6 bg-cover bg-center font-sans"
-      style={{ backgroundImage: "url('/background.jpg')" }}
+      className="relative flex flex-col items-center justify-center min-h-screen text-white text-center p-6"
+      style={{
+        backgroundImage: "url('/background.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed", // Ensures a more dynamic mobile-friendly feel
+      }}
     >
       {/* Dark Overlay for Readability */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
@@ -56,9 +61,6 @@ export default function Home() {
 
         {/* Countdown Section */}
         <div className="text-center">
-          <h1 className="text-7xl font-extrabold uppercase text-red-500 drop-shadow-lg animate-fadeIn">
-            IT HAS BEGUN!
-          </h1>
           <p className="text-5xl font-bold mt-2 text-yellow-500 drop-shadow-md animate-fadeIn">
             {countdown}
           </p>
@@ -84,7 +86,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-blue-600 to-blue-900 p-6 rounded-lg shadow-md border border-green-400">
               <h4 className="text-2xl font-bold text-white">Phase 1: Launch (In Progress)</h4>
               <ul className="mt-3 text-gray-300 text-lg leading-relaxed">
-                <li>🔹 Branding & website deployment</li>
+                <li className="text-green-400 font-semibold">✔️ Branding & website deployment (Complete)</li>
                 <li>🔹 First tournament initiation</li>
                 <li>🔹 Community building & marketing push</li>
               </ul>
@@ -109,9 +111,8 @@ export default function Home() {
                 <li>🔹 UX/UI improvements</li>
               </ul>
             </div>
-
-            {/* Phase 4 */}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                        {/* Phase 4 */}
+                        <div className="bg-gray-800 p-6 rounded-lg shadow-md">
               <h4 className="text-2xl font-bold text-purple-500">Phase 4: Game Integration</h4>
               <ul className="mt-3 text-gray-300 text-lg leading-relaxed">
                 <li>🔹 In-game $KOMBAT rewards</li>
@@ -139,7 +140,6 @@ export default function Home() {
                 <li>🔹 Large-scale competitive tournaments</li>
               </ul>
             </div>
-
           </div>
         </div>
       </div>
